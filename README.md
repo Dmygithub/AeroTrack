@@ -1,17 +1,11 @@
 # AeroTrack
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2607.08075"><img src="https://img.shields.io/badge/arXiv-2607.08075-b31b1b.svg" alt="arXiv"></a>
-  &nbsp;
-  <a href="https://arxiv.org/pdf/2607.08075"><img src="https://img.shields.io/badge/Paper-PDF-orange.svg" alt="PDF"></a>
-</p>
-
-<p align="center">
   <b>UAV-OVVIS: Unmanned Aerial Vehicles Also Need Open-Vocabulary Video Instance Segmentation</b><br>
-  <a href="https://arxiv.org/abs/2607.08075">arXiv:2607.08075</a>
+  <a href="https://arxiv.org/abs/2607.08075"><img src="https://img.shields.io/badge/arXiv-2607.08075-b31b1b.svg" alt="arXiv"></a>
 </p>
 
-**AeroTrack** provides **five training-free** open-vocabulary video instance segmentation pipelines for UAV videos (BL2–BL6). Given a text prompt, an open-vocabulary detector (Grounding DINO / YOLO-World / SAM3) finds targets at key frames; SAM2/SAM3 propagates masks over time; lifecycle-aware association (LIA) keeps track IDs stable.
+**AeroTrack** is a **training-free** framework for **Unmanned Aerial Vehicle Open-Vocabulary Video Instance Segmentation (UAV-OVVIS)**. It periodically detects text-specified targets with open-vocabulary recognizers (Grounding DINO / YOLO-World / SAM3), propagates instance masks via SAM2/SAM3 within short segments, and maintains globally consistent identities through Lifecycle-aware ID Association (LIA). We release five pipeline variants (**BL2–BL6**) and the **AeroVIS** benchmark.
 
 <p align="center">
   <img src="Image/UAV-OVVIS.gif" width="96%">
@@ -22,11 +16,13 @@
   <img src="Image/AeroTrack.png" width="96%">
 </p>
 
-Benchmark: **AeroVIS** (UAV-OVVIS), a YTVIS-style open-vocabulary video instance segmentation dataset for aerial scenes.
+We construct **[AeroVIS](https://drive.google.com/file/d/1DMLagGZMPntrvxk5W0PsaIoybsE7WX56/view?usp=drive_link)** for evaluating open-vocabulary video instance segmentation in Unmanned Aerial Vehicle (UAV) scenes. Evaluation results are shown below:
 
 <p align="center">
   <img src="Image/table1.png" width="96%">
 </p>
+
+Qualitative results:
 
 <p align="center">
   <img src="Image/fig2.png" width="96%">
@@ -89,10 +85,10 @@ During evaluation, per-category tuning is loaded from `configs/categories/<categ
 
 ```text
 .
-├── aerotrack_core/           # Core tracking, model, and evaluation modules
+├── aerotrack_core/           # Core model, pipeline, and evaluation modules
 ├── configs/
-│   ├── baselines/            # BL1-BL6 baseline YAML configs
-│   └── categories/           # Per-category tracking/detector tuning for evaluation
+│   ├── baselines/            # BL2-BL6 baseline YAML configs
+│   └── categories/           # Per-category detector/segmenter tuning for evaluation
 ├── data/AeroVIS/             # AeroVIS dataset description and expected data layout
 ├── demo_video.py             # Video/frame-sequence demo entry point
 ├── evaluate.py               # Benchmark evaluation entry point
