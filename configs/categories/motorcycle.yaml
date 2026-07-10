@@ -5,16 +5,17 @@ tracking:
   max_objects: 30              # Max concurrent tracked instances
   max_trk_keep_alive: 4        # Fixed; not tuned in current pipeline
   max_dets: 50                # Max detections per frame (should exceed max_objects)
+  max_mask_area_ratio: 0.4     # Max mask area ratio; drop degenerate masks
 
   # NMS and matching
   nms_iou_thr: 0.25            # NMS IoU threshold
   # Track lifecycle (BL2-BL6)
-  use_track_lifecycle: true        # Enabled by default; disable only for ablation
-  lost_track_ttl_segments: 1       # global fixed
-  lifecycle_match_score_thr: 0.1  # global fixed
-  lifecycle_center_gate: 2.5       # Fixed preset by object scale
-  lifecycle_area_ratio_min: 0.3   # Fixed area-ratio lower bound
-  lifecycle_area_ratio_max: 4.5    # Fixed area-ratio upper bound
+  use_track_lifecycle: true       
+  lost_track_ttl_segments: 1       
+  lifecycle_match_score_thr: 0.1  
+  lifecycle_center_gate: 2.5       
+  lifecycle_area_ratio_min: 0.3   
+  lifecycle_area_ratio_max: 4.5    
 
   # Grounding DINO (BL4/BL6)
   box_threshold: 0.3           # Box confidence threshold
@@ -26,7 +27,6 @@ tracking:
 
   # SAM2 (BL5/BL6)
   mask_nms_iou_thr: 0.5        # Mask-level NMS IoU threshold
-  max_mask_area_ratio: 0.4     # Max mask area ratio; drop degenerate masks
 
   # SAM3 (BL2/BL3/BL4)
   new_det_thresh: 0.75         # SAM3 internal detection score threshold

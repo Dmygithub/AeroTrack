@@ -16,14 +16,19 @@ Benchmark: **AeroVIS** (UAV-OVVIS), a YTVIS-style open-vocabulary video instance
   <img src="Image/fig2.png" width="96%">
 </p>
 
+<p align="center">
+  <img src="Image/UAV-OVVIS.gif" width="96%">
+</p>
+
 **Setup:** [INSTALL.md](INSTALL.md)
 
 ## Demo
 
-`--baseline` selects BL2–BL6; `--text` is a short open-vocabulary prompt (e.g. `vehicle`, `person riding bicycle`).
+`--baseline` selects BL2–BL6; `--text` is a short open-vocabulary prompt. A **single word** needs no quotes (e.g. `vehicle`); **multi-word phrases** should be quoted (e.g. `"road median fence"`, `"person riding bicycle"`).
 
 ```bash
 python demo_video.py --baseline 2 --video <video_or_frame_dir> --text vehicle --output outputs/
+python demo_video.py --baseline 2 --video <video_or_frame_dir> --text "road median fence" --output outputs/
 ```
 
 | BL | Training-free pipeline |
