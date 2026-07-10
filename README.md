@@ -28,7 +28,7 @@ python demo_video.py --baseline 2 --video <video_or_frame_dir> --text vehicle --
 
 | BL | Training-free pipeline |
 | :--- | :--- |
-| BL2 | SAM3 + hard restart |
+| BL2 | SAM3 + SAM3 |
 | BL3 | YOLO-World + SAM3 |
 | BL4 | GroundingDINO + SAM3 |
 | BL5 | YOLO-World + SAM2 |
