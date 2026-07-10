@@ -7,6 +7,9 @@
 </p>
 
 Benchmark: **AeroVIS** (UAV-OVVIS), a YTVIS-style open-vocabulary video instance segmentation dataset for aerial scenes.
+<p align="center">
+  <video src="Image/UAV-OVVIS.mp4" width="96%" controls autoplay loop muted playsinline></video>
+</p>
 
 <p align="center">
   <img src="Image/table1.png" width="96%">
@@ -14,10 +17,6 @@ Benchmark: **AeroVIS** (UAV-OVVIS), a YTVIS-style open-vocabulary video instance
 
 <p align="center">
   <img src="Image/fig2.png" width="96%">
-</p>
-
-<p align="center">
-  <img src="Image/UAV-OVVIS.gif" width="96%">
 </p>
 
 **Setup:** [INSTALL.md](INSTALL.md)
