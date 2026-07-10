@@ -1,0 +1,32 @@
+# Category: person
+# Tiny targets (~30x54 px), very dense (up to 270/video), low visibility.
+
+tracking:
+  max_objects: 100             # Max concurrent tracked instances
+  max_trk_keep_alive: 4        # Fixed; not tuned in current pipeline
+  max_dets: 150                # Max detections per frame (should exceed max_objects)
+
+  # NMS and matching
+  nms_iou_thr: 0.25            # NMS IoU threshold
+  # Track lifecycle (BL2-BL6)
+  use_track_lifecycle: true        # Enabled by default; disable only for ablation
+  lost_track_ttl_segments: 1       # global fixed
+  lifecycle_match_score_thr: 0.1  # global fixed
+  lifecycle_center_gate: 2.5       # Fixed preset by object scale
+  lifecycle_area_ratio_min: 0.3   # Fixed area-ratio lower bound
+  lifecycle_area_ratio_max: 4.5    # Fixed area-ratio upper bound
+
+  # Grounding DINO (BL4/BL6)
+  box_threshold: 0.2          # Box confidence threshold
+  gdino_infer_scale: 1.1       # GDINO infer scale (1.0 = 800/1333)
+
+  # YOLO-World (BL3/BL5)
+  score_thr: 0.002             # Detection score threshold
+  yolo_infer_scale: 3.0        # YOLO-World infer scale (1.0 = 640)
+
+  # SAM2 (BL5/BL6)
+  mask_nms_iou_thr: 0.4        # Mask-level NMS IoU threshold
+  max_mask_area_ratio: 0.4     # Max mask area ratio; drop degenerate masks
+
+  # SAM3 (BL2/BL3/BL4)
+  new_det_thresh: 0.65        # SAM3 internal detection score threshold

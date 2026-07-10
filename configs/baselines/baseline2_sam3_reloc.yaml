@@ -1,0 +1,20 @@
+# BL2: SAM3 with fixed-interval hard restart.
+# Restarts the SAM3 session every relocation_interval frames for re-detection.
+# Note: evaluate.py overrides tracking via configs/categories/<cat>.yaml.
+# These defaults apply to demo_video.py only.
+
+baseline: 2
+
+io:
+  video: "data/VisDrone-OVTS/sequences/uav0000013_01073_v"
+  output: "outputs/videos"
+  sam3_ckpt: "checkpoints/sam3.pt"
+
+tracking:
+  text: "vehicle"        # Text prompt (comma-separated for multi-class)
+  prompt_frame: 0        # Prompt frame index
+  relocation_interval: 25  # Hard-restart interval in frames
+
+sam3_tuning:
+  num_maskmem: 2               # Frames kept in SAM3 memory bank
+  max_obj_ptrs_in_encoder: 4   # Max object pointers in encoder

@@ -1,0 +1,18 @@
+# BL6: Grounding DINO detection + SAM2 hard-restart segmentation (BL4 with SAM2).
+# Note: evaluate.py overrides tracking via configs/categories/<cat>.yaml.
+# These defaults apply to demo_video.py only.
+# SAM2 baselines ignore max_trk_keep_alive, new_det_thresh, and sam3_tuning.
+
+baseline: 6
+
+io:
+  video: "data/VisDrone-OVTS/sequences/uav0000013_01073_v"
+  output: "outputs/videos"
+  sam2_ckpt: "checkpoints/sam2.1_hiera_large.pt"
+  gdino_ckpt: "checkpoints/groundingdino_swint_ogc.pth"
+  gdino_bert_path: "checkpoints/bert-base-uncased"
+
+tracking:
+  text: "vehicle"          # Text prompt (comma-separated for multi-class)
+  prompt_frame: 0          # Prompt frame index
+  relocation_interval: 25  # Hard-restart interval in frames

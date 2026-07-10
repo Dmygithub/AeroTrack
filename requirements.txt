@@ -1,0 +1,35 @@
+# AeroTrack Unified Shared Requirements
+# Environment: Python 3.10/3.11, PyTorch 2.x + CUDA 12.x
+# NOTE: C++ Custom ops (like GroundingDINO) are locally compiled via staged 
+# 'python -m pip install -e .' pipelines in 'aerotrack_core/models/'. 
+# Please refer to INSTALL.md for the step-by-step Omni-Pipeline guide.
+
+# Shared Core
+addict
+yapf
+numpy>=1.26,<2
+supervision>=0.19.0
+pycocotools
+transformers==4.36.2
+
+# OpenCV: only install opencv-python, NOT headless variant.
+# albumentations -> albucore will pull opencv-python-headless as a side effect;
+# run `pip uninstall opencv-python-headless` after installing requirements.
+opencv-python<=4.11.0.86
+albumentations>=1.3.1  # YOLO-World augmentations
+
+# Utility
+psutil
+tqdm
+pandas
+matplotlib
+einops
+
+# SAM2 Dependencies (BL5/BL6)
+hydra-core>=1.2,<2.0   # SAM2 config loading (BL5/BL6)
+omegaconf>=2.1         # hydra dependency
+scikit-image  # required by connected_components CPU fallback (skimage.measure.label)
+iopath
+decord
+huggingface_hub
+ftfy
