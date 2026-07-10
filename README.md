@@ -55,8 +55,6 @@ data/AeroVIS/
 └── sequences/
 ```
 
-**Download:** [Google Drive](https://drive.google.com/file/d/1DMLagGZMPntrvxk5W0PsaIoybsE7WX56/view?usp=drive_link) (~12.6 GB, extract to `data/AeroVIS/`)
-
 Categories and format: [data/AeroVIS/data.md](data/AeroVIS/data.md)
 
 ## Evaluation
