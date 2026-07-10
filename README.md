@@ -3,13 +3,15 @@
 **AeroTrack** provides **five training-free** open-vocabulary tracking pipelines for UAV videos (BL2–BL6). Given a text prompt, an open-vocabulary detector (Grounding DINO / YOLO-World / SAM3) finds targets at key frames; SAM2/SAM3 propagates masks over time; lifecycle-aware association (LIA) keeps track IDs stable.
 
 <p align="center">
+  <video src="Image/UAV-OVVIS.mp4" width="96%" controls autoplay loop muted playsinline></video>
+</p>
+
+
+<p align="center">
   <img src="Image/AeroTrack.png" width="96%">
 </p>
 
 Benchmark: **AeroVIS** (UAV-OVVIS), a YTVIS-style open-vocabulary video instance segmentation dataset for aerial scenes.
-<p align="center">
-  <video src="Image/UAV-OVVIS.mp4" width="96%" controls autoplay loop muted playsinline></video>
-</p>
 
 <p align="center">
   <img src="Image/table1.png" width="96%">
